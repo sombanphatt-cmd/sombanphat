@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phat Somban Portfolio</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #111;
+            color: white;
+        }
+        header {
+            text-align: center;
+            padding: 50px;
+            background: black;
+        }
+        section {
+            padding: 40px;
+        }
+        .card {
+            background: #222;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Phat Somban</h1>
+    <p>Developer | NFC Business | Portfolio</p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <div class="card">
+        <p>I am a passionate developer with experience in C#, database systems, and web development. I also work with NFC business solutions like LINKME.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <div class="card">
+        <p>- C# Programming</p>
+        <p>- SQL Database</p>
+        <p>- HTML, CSS</p>
+        <p>- NFC Business Solutions</p>
+    </div>
+</section>
+
+<section>
+    <h2>Work Experience</h2>
+    <div class="card">
+        <p><b>NFC Business Seller</b></p>
+        <p>Providing smart NFC cards using LINKME platform.</p>
+    </div>
+
+    <div class="card">
+        <p><b>Software Developer</b></p>
+        <p>Created library system using C# and SQL Server.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: your@email.com</p>
+        <p>Phone: 012 xxx xxx</p>
+    </div>
+</section>
+
+</body>
+</html>
