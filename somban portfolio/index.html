@@ -39,10 +39,153 @@
             border-bottom: 2px solid #09f;
             padding-bottom: 5px;
         }
-    </style>
+        .timeline { position: relative; padding-left: 20px; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 6px; bottom: 6px;
+  width: 2px; background: #21262d; border-radius: 2px;
+}
+.edu-item {
+  position: relative; margin-bottom: 12px;
+  background: #161b22; border: 1px solid #30363d;
+  border-radius: 12px; padding: 18px 20px;
+  transition: border-color 0.2s;
+}
+.edu-item:hover { border-color: #388bfd55; }
+.edu-item::before {
+  content: ''; position: absolute;
+  left: -26px; top: 20px;
+  width: 10px; height: 10px;
+  border-radius: 50%; background: #388bfd;
+  border: 2px solid #0d1117;
+}
+.edu-school { font-size: 15px; font-weight: 600; color: #e6edf3; margin-bottom: 4px; }
+.edu-program { font-size: 13.5px; color: #79c0ff; margin-bottom: 6px; }
+.edu-year {
+  display: inline-block; font-size: 12px;
+  background: rgba(56,139,253,0.1); color: #8b949e;
+  border: 1px solid #30363d; border-radius: 20px;
+  padding: 2px 12px;
+}
+.job-card {
+  position: relative; margin-bottom: 16px;
+  background: #161b22; border: 1px solid #30363d;
+  border-radius: 12px; padding: 20px 22px;
+  transition: border-color 0.2s;
+}
+.job-card:hover { border-color: #388bfd55; }
+.job-card::before {
+  content: ''; position: absolute;
+  left: -26px; top: 22px;
+  width: 10px; height: 10px;
+  border-radius: 50%; background: #388bfd;
+  border: 2px solid #0d1117;
+}
+.job-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.job-title { font-size: 15px; font-weight: 600; color: #e6edf3; }
+.job-type { font-size: 11px; padding: 3px 11px; border-radius: 20px; white-space: nowrap; font-weight: 500; }
+.job-type.intern { background: rgba(56,189,141,0.1); color: #56d364; border: 1px solid rgba(56,211,141,0.3); }
+.job-type.fulltime { background: rgba(56,139,253,0.1); color: #79c0ff; border: 1px solid rgba(56,139,253,0.3); }
+.job-type.admin { background: rgba(188,140,255,0.1); color: #bc8cff; border: 1px solid rgba(188,140,255,0.3); }
+.job-bullets { list-style: none; padding: 0; margin: 0; }
+.job-bullets li { color: #8b949e; font-size: 13.5px; line-height: 1.65; padding: 4px 0 4px 18px; position: relative; border-bottom: 1px solid #21262d; }
+.job-bullets li:last-child { border-bottom: none; }
+.job-bullets li::before { content: '›'; position: absolute; left: 0; color: #388bfd; font-weight: 700; font-size: 16px; line-height: 1.4; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.skill-item { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; transition: border-color 0.2s, background 0.2s; }
+.skill-item:hover { border-color: #388bfd55; background: #1c2230; }
+.skill-icon { width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.skill-icon svg { width: 17px; height: 17px; }
+.skill-icon.csharp { background: rgba(188,140,255,0.12); } .skill-icon.csharp svg { fill: #bc8cff; }
+.skill-icon.sql { background: rgba(56,139,253,0.12); } .skill-icon.sql svg { fill: #79c0ff; }
+.skill-icon.web { background: rgba(255,166,77,0.12); } .skill-icon.web svg { fill: #ffa64d; }
+.skill-icon.it { background: rgba(56,211,141,0.12); } .skill-icon.it svg { fill: #56d364; }
+.skill-name { font-size: 13.5px; color: #c9d1d9; font-weight: 500; }
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.project-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; transition: border-color 0.2s; }
+.project-card:hover { border-color: #388bfd55; }
+.project-header { display: flex; align-items: center; gap: 10px; }
+.project-dot { width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0; background: rgba(56,139,253,0.12); display: flex; align-items: center; justify-content: center; }
+.project-dot svg { width: 17px; height: 17px; fill: #79c0ff; }
+.project-title { font-size: 14.5px; font-weight: 600; color: #e6edf3; }
+.project-desc { font-size: 13px; color: #8b949e; line-height: 1.65; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tag { font-size: 11px; padding: 2px 10px; border-radius: 20px; font-weight: 500; background: rgba(56,139,253,0.1); color: #79c0ff; border: 1px solid rgba(56,139,253,0.25); }
+.tag.purple { background: rgba(188,140,255,0.1); color: #bc8cff; border-color: rgba(188,140,255,0.25); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;  /* ← this is what makes photos fit uniformly */
+  border-radius: 10px;
+  border: 2px solid #222;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+  border-color: #09f;
+}
+
+/* Lightbox overlay */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.active { display: flex; }
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+}
+.lightbox-close {
+  position: fixed;
+  top: 20px; right: 28px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+</style>
 </head>
 <body>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
 
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+
+  // Close when clicking outside the image
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  // Close with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 <header>
     <!-- 🔥 ADD YOUR PHOTO HERE -->
    <img src="image/DSC_3824.JPG" alt="Profile Photo">
@@ -57,63 +200,241 @@
             I am a motivated junior developer with experience in C#, SQL databases, 
             and web development. I also work as an IT Support specialist, helping 
             users solve technical problems and maintaining systems. I am eager to 
-            learn and grow in software development.
+            learn and grow in software development.Motivated and detail-oriented IT student with hands-on experience in technical support and system troubleshooting. Able to diagnose and resolve hardware, software, and network issues efficiently. I am a learner with strong responsibility, seeking an IT Support role to develop practical skills and contribute to company success
+
         </p>
     </div>
+    <section>
+  <div class="section-title">Education</div>
+  <div class="timeline">
+
+    <div class="edu-item">
+      <div class="edu-school">Beltei International University</div>
+      <div class="edu-program">Software Engineering (Year II)</div>
+      <span class="edu-year">2024 – Present</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-school">Australian Centre for Education</div>
+      <div class="edu-program">Graduate General English Program</div>
+      <span class="edu-year">Oct 2020 – Oct 2022</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-school">Phsar Doeum Thkov High School</div>
+      <div class="edu-program">General Knowledge High School Diploma</div>
+      <span class="edu-year">2012 – 2024</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-school">The Westline School</div>
+      <div class="edu-program">Young Learner's English Program</div>
+      <span class="edu-year">2011 – Oct 2020</span>
+    </div>
+
+  </div>
+</section>
 </section>
 
 <section>
-    <h2>Skills</h2>
-    <div class="card">
-        <p>✔ C# Programming</p>
-        <p>✔ SQL Server / Database Management</p>
-        <p>✔ HTML, CSS, Basic JavaScript</p>
-        <p>✔ IT Support & Troubleshooting</p>
+  <div class="section-title">Skills</div>
+  <div class="skills-grid">
+
+    <div class="skill-item">
+      <div class="skill-icon csharp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0L1.5 6v12L12 24l10.5-6V6L12 0zm5.5 14.5h-1.75v1.75h-1.5V14.5H12.5v-1.5h1.75V11.25h1.5V13h1.75v1.5zM9.5 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5c.96 0 1.82.39 2.45 1.01l-1.06 1.06A2 2 0 009.5 10 2 2 0 007.5 12a2 2 0 002 2c.55 0 1.05-.22 1.41-.59l1.06 1.06A3.48 3.48 0 019.5 15.5z"/>
+        </svg>
+      </div>
+      <span class="skill-name">C# Programming</span>
     </div>
+
+    <div class="skill-item">
+      <div class="skill-icon sql">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 4.02 2 6.5v11C2 19.98 6.48 22 12 22s10-2.02 10-4.5v-11C22 4.02 17.52 2 12 2zm0 2c4.42 0 8 1.57 8 3.5S16.42 9 12 9 4 7.43 4 5.5 7.58 4 12 4zm0 16c-4.42 0-8-1.57-8-3.5v-2.13C5.53 15.69 8.55 16.5 12 16.5s6.47-.81 8-2.13V16.5c0 1.93-3.58 3.5-8 3.5zm0-5c-4.42 0-8-1.57-8-3.5v-2.13C5.53 10.69 8.55 11.5 12 11.5s6.47-.81 8-2.13V12.5c0 1.93-3.58 3.5-8 3.5z"/>
+        </svg>
+      </div>
+      <span class="skill-name">SQL Server / Database</span>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-icon web">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+      </div>
+      <span class="skill-name">HTML, CSS, JavaScript</span>
+    </div>
+
+    <div class="skill-item">
+      <div class="skill-icon it">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/>
+        </svg>
+      </div>
+      <span class="skill-name">IT Support & Troubleshooting</span>
+    </div>
+
+  </div>
 </section>
 
 <section>
-    <h2>Projects</h2>
-    <div class="card">
-        <p><b>Library Management System</b></p>
-        <p>Developed using C# and SQL Server. Features include book borrowing, returning, and database management.</p>
+  <div class="section-title">Projects</div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-dot">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+        </div>
+        <div class="project-title">Library Management System</div>
+      </div>
+      <div class="project-desc">Developed using C# and SQL Server. Features include book borrowing, returning, and database management.</div>
+      <div class="project-tags">
+        <span class="tag purple">C#</span>
+        <span class="tag">SQL Server</span>
+      </div>
     </div>
 
-    <div class="card">
-        <p><b>Portfolio Website</b></p>
-        <p>Created a personal portfolio using HTML and CSS and deployed using GitHub Pages.</p>
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-dot">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 14H5L12 9l7 9zm-3.5-6l-2-2.5-3 4h10l-5-1.5z"/>
+          </svg>
+        </div>
+        <div class="project-title">Portfolio Website</div>
+      </div>
+      <div class="project-desc">Created a personal portfolio using HTML, CSS, and JavaScript to showcase skills and experience.</div>
+      <div class="project-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+      </div>
     </div>
+
+  </div>
 </section>
 
 <section>
-    <h2>Work Experience</h2>
-    <div class="card">
-        <p><b>Sales Admin</b></p>
-        <p>
-            - Supported daily sales operations<br>
-            - Tracked sales through system<br>
-            - Verified reports with invoices
-        </p>
+  <div class="section-title">Work Experience</div>
+  <div class="timeline">
+
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title">Sales Admin</div>
+        <span class="job-type admin">Admin</span>
+        <span class="edu-year">2025 – 2025</span>
+      </div>
+      <ul class="job-bullets">
+        <li>Supported daily sales operations</li>
+        <li>Tracked sales through internal system</li>
+        <li>Verified sale's reports with invoices</li>
+        <li>Assisted sales team with reporting and documentation</li>
+        <li>Maintained customer and sales records</li>
+      </ul>
     </div>
 
-    <div class="card">
-        <p><b>IT Support Internship</b></p>
-        <p>
-            - learn and understand the basics of IT support<br>
-            - Assisted in troubleshooting and resolving technical issues
-            - Gained hands-on experience in IT support tasks
-            - Inproved communication skills by interacting with users and team members
-        </p>
-        <p><b>IT Support Specialist</b></p>
-        <p>
-            - Provided technical support to users<br>
-            - Installed and maintained systems<br>
-            - Troubleshot hardware and software issues
-            - Assisted in network setup and maintenance
-            - Printer maintenance and support
-            - set up Gmail and Facebook security for customers 
-        </p>
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title">IT Support Internship</div>
+        <span class="job-type intern">Internship</span>
+        <span class="edu-year">2025 </span>
+      </div>
+      <ul class="job-bullets">
+        <li>Learned and understood the basics of IT support</li>
+        <li>Assisted in troubleshooting and resolving technical issues</li>
+        <li>Gained hands-on experience in IT support tasks</li>
+        <li>Improved communication skills by interacting with users and team members</li>
+        <li>Installed PCs and set up printers</li>
+        <li>Activated Windows and Office using KMS Software</li>
+      </ul>
     </div>
+
+    <div class="job-card">
+      <div class="job-header">
+        <div class="job-title">IT Support Specialist</div>
+        <span class="job-type fulltime">Full-time</span>
+        <span class="edu-year">2026 – Present</span>
+      </div>
+      <ul class="job-bullets">
+        <li>Provided technical support to users</li>
+        <li>Installed and maintained systems</li>
+        <li>Troubleshot hardware and software issues</li>
+        <li>Assisted in network setup and maintenance</li>
+        <li>Performed printer maintenance and support</li>
+        <li>Set up Gmail and Facebook account security for customers</li>
+        <li>Supported new employees and customers on the company's LINKME system</li>
+        <li>Printed ID cards for employees and customers</li>
+        <li>Maintained and supported switches and routers</li>
+        <li>Crimped and connected RJ45 network cables</li>
+        <li>Installed lighting and wiring in office and factory</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<section>
+  <h2>Work Gallery</h2>
+
+  <h3 style="color:#09f; margin: 20px 0 10px;">Design Projects</h3>
+  <div class="gallery-grid">
+    <img src="image/photo_1_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_2_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_3_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">      
+    <img src="image/photo_4_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_5_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_6_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_7_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_8_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_9_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_10_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+  </div>
+
+  <h3 style="color:#09f; margin: 24px 0 10px;">Website Projects</h3>
+  <div class="gallery-grid">
+    <img src="image/Screenshot (307).png" alt="Website Project 1" class="gallery-img"
+     onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (308).png" alt="Website Project 2" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (309).png" alt="Website Project 3" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (310).png" alt="Website Project 4" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (311).png" alt="Website Project 5" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (312).png" alt="Website Project 6" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/photo_2025-06-12_13-55-54.jpg" alt="Website Project 7" class="gallery-img"
+      onclick="openLightbox(this.src)">
+  </div>
+
+  <h3 style="color:#09f; margin: 24px 0 10px;">IT Support (Recent)</h3>
+  <div class="gallery-grid">
+      <img src="image/photo_1_2026-04-26_12-53-38.jpg" alt="IT Support 1" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/photo_2_2026-04-26_12-53-38.jpg" alt="IT Support 2" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/photo_3_2026-04-26_12-53-38.jpg" alt="IT Support 3" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/photo_2026-03-06_11-36-22.jpg" alt="IT Support 4" class="gallery-img"
+      onclick="openLightbox(this.src)">
+  </div>
+
+</section>
 </section>
 
 <section>
@@ -122,6 +443,7 @@
         <p>Email: sombanphatt@email.com</p>
         <p>Phone: 096 391 7272</p>
         <p>GitHub: https://github.com/sombanphat</p>
+        <p>Telegram: https://t.me/+855963917272</p>
     </div>
 </section>
 
