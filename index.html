@@ -161,7 +161,31 @@
 </style>
 </head>
 <body>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
 
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+
+  // Close when clicking outside the image
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  // Close with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 <header>
     <!-- 🔥 ADD YOUR PHOTO HERE -->
    <img src="image/DSC_3824.JPG" alt="Profile Photo">
@@ -215,22 +239,43 @@
 <section>
   <div class="section-title">Skills</div>
   <div class="skills-grid">
+
     <div class="skill-item">
-      <div class="skill-icon csharp"><!-- svg here --></div>
+      <div class="skill-icon csharp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0L1.5 6v12L12 24l10.5-6V6L12 0zm5.5 14.5h-1.75v1.75h-1.5V14.5H12.5v-1.5h1.75V11.25h1.5V13h1.75v1.5zM9.5 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5c.96 0 1.82.39 2.45 1.01l-1.06 1.06A2 2 0 009.5 10 2 2 0 007.5 12a2 2 0 002 2c.55 0 1.05-.22 1.41-.59l1.06 1.06A3.48 3.48 0 019.5 15.5z"/>
+        </svg>
+      </div>
       <span class="skill-name">C# Programming</span>
     </div>
+
     <div class="skill-item">
-      <div class="skill-icon sql"><!-- svg here --></div>
+      <div class="skill-icon sql">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 4.02 2 6.5v11C2 19.98 6.48 22 12 22s10-2.02 10-4.5v-11C22 4.02 17.52 2 12 2zm0 2c4.42 0 8 1.57 8 3.5S16.42 9 12 9 4 7.43 4 5.5 7.58 4 12 4zm0 16c-4.42 0-8-1.57-8-3.5v-2.13C5.53 15.69 8.55 16.5 12 16.5s6.47-.81 8-2.13V16.5c0 1.93-3.58 3.5-8 3.5zm0-5c-4.42 0-8-1.57-8-3.5v-2.13C5.53 10.69 8.55 11.5 12 11.5s6.47-.81 8-2.13V12.5c0 1.93-3.58 3.5-8 3.5z"/>
+        </svg>
+      </div>
       <span class="skill-name">SQL Server / Database</span>
     </div>
+
     <div class="skill-item">
-      <div class="skill-icon web"><!-- svg here --></div>
+      <div class="skill-icon web">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+      </div>
       <span class="skill-name">HTML, CSS, JavaScript</span>
     </div>
+
     <div class="skill-item">
-      <div class="skill-icon it"><!-- svg here --></div>
+      <div class="skill-icon it">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/>
+        </svg>
+      </div>
       <span class="skill-name">IT Support & Troubleshooting</span>
     </div>
+
   </div>
 </section>
 
@@ -240,7 +285,11 @@
 
     <div class="project-card">
       <div class="project-header">
-        <div class="project-dot"><!-- svg here --></div>
+        <div class="project-dot">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+        </div>
         <div class="project-title">Library Management System</div>
       </div>
       <div class="project-desc">Developed using C# and SQL Server. Features include book borrowing, returning, and database management.</div>
@@ -252,10 +301,22 @@
 
     <div class="project-card">
       <div class="project-header">
-        <div class="project-dot"><!-- svg here --></div>
+        <div class="project-dot">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 14H5L12 9l7 9zm-3.5-6l-2-2.5-3 4h10l-5-1.5z"/>
+          </svg>
+        </div>
         <div class="project-title">Portfolio Website</div>
       </div>
-      <div class="project-desc">Created a personal portfolio using HTML and C
+      <div class="project-desc">Created a personal portfolio using HTML, CSS, and JavaScript to showcase skills and experience.</div>
+      <div class="project-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <section>
@@ -321,22 +382,56 @@
 
   <h3 style="color:#09f; margin: 20px 0 10px;">Design Projects</h3>
   <div class="gallery-grid">
-    <img src="image/photo_1_2026-04-26_00-53-00.jpg" alt="Design Project 1" class="gallery-img">
-    <img src="image/photo_2_2026-04-26_00-53-00.jpg" alt="Design Project 2" class="gallery-img">
-    <img src="image/photo_3_2026-04-26_00-53-00.jpg" alt="Design Project 3" class="gallery-img">
-    <img src="image/photo_4_2026-04-26_00-53-00.jpg" alt="Design Project 4" class="gallery-img">
-    <img src="image/photo_5_2026-04-26_00-53-00.jpg" alt="Design Project 5" class="gallery-img">
-    <img src="image/photo_6_2026-04-26_00-53-00.jpg" alt="Design Project 6" class="gallery-img">
-    <img src="image/photo_7_2026-04-26_00-53-00.jpg" alt="Design Project 7" class="gallery-img">
-    <img src="image/photo_9_2026-04-26_00-53-00.jpg" alt="Design Project 9" class="gallery-img">
-    <img src="image/photo_10_2026-04-26_00-53-00.jpg" alt="Design Project 1<Paste0>0" class="gallery-img">
+    <img src="image/photo_1_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_2_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_3_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">      
+    <img src="image/photo_4_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_5_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_6_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_7_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_8_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_9_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+    <img src="image/photo_10_2026-04-26_00-53-00.jpg" class="gallery-img"
+     onclick="openLightbox(this.src)">
+  </div>
+
+  <h3 style="color:#09f; margin: 24px 0 10px;">Website Projects</h3>
+  <div class="gallery-grid">
+    <img src="image/Screenshot (307).png" alt="Website Project 1" class="gallery-img"
+     onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (308).png" alt="Website Project 2" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (309).png" alt="Website Project 3" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (310).png" alt="Website Project 4" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (311).png" alt="Website Project 5" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/Screenshot (312).png" alt="Website Project 6" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/photo_2025-06-12_13-55-54.jpg" alt="Website Project 7" class="gallery-img"
+      onclick="openLightbox(this.src)">
   </div>
 
   <h3 style="color:#09f; margin: 24px 0 10px;">IT Support (Recent)</h3>
   <div class="gallery-grid">
-    <img src="image/photo_1_2026-04-26_12-53-38.jpg" alt="Recent 1" class="gallery-img">
-    <img src="image/photo_2_2026-04-26_12-53-38.jpg" alt="Recent 2" class="gallery-img">
-    <img src="image/photo_3_2026-04-26_12-53-38.jpg" alt="Recent 3" class="gallery-img">
+      <img src="image/photo_1_2026-04-26_12-53-38.jpg" alt="IT Support 1" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/photo_2_2026-04-26_12-53-38.jpg" alt="IT Support 2" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/photo_3_2026-04-26_12-53-38.jpg" alt="IT Support 3" class="gallery-img"
+      onclick="openLightbox(this.src)">
+      <img src="image/photo_2026-03-06_11-36-22.jpg" alt="IT Support 4" class="gallery-img"
+      onclick="openLightbox(this.src)">
   </div>
 
 </section>
